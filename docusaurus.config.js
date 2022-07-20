@@ -10,7 +10,7 @@ const katex = require('rehype-katex');
 const config = {
   title: 'Hello! 我是元玉鹏',
   tagline: 'all above yuanyp8',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://yuanyp8.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -19,8 +19,9 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'yuanyp8', // Usually your GitHub org/user name.
-  projectName: 'wiki', // Usually your repo name.
-
+  projectName: 'yuanyp8.github.io', // Usually your repo name.
+  // deploymentBranch: 'master',
+  trailingSlash: false,
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -63,7 +64,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Yuanyp8 Wiki',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -77,7 +78,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/yuanyp8/yuanyp8.github.io',
             label: 'GitHub',
             position: 'right',
           },
