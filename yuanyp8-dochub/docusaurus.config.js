@@ -8,7 +8,7 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'yuanyp8 wiki',
+  title: 'Hello! 我是元玉鹏',
   tagline: 'all above yuanyp8',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
