@@ -6,14 +6,26 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
+const pageRef = require('./src/plugins/pageRef');
+
+const pageOptions = {
+  sidebarCollapsible: false,
+  // editUrl: 'https://github.com/PatelN123/Digital-Support-Notes/edit/main/Website/',
+  showLastUpdateAuthor: true,
+  showLastUpdateTime: true,
+  beforeDefaultRemarkPlugins: [
+    pageRef,
+  ],
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Hello! 我是元玉鹏',
-  tagline: 'all above yuanyp8',
+  title: 'Hi! 我是元玉鹏',
+  tagline: "Yuanyp8's wiki",
   url: 'https://yuanyp8.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'log',
+  onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
@@ -26,8 +38,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-CN',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -44,14 +56,20 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/yuanyp8/yuanyp8.github.io/tree/master/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          breadcrumbs: false,
         },
         blog: {
+          blogTitle: "随笔",
+          blogDescription: "YEE式機器龍各種用肝和 ❤️ 製作的部落格",
+          blogSidebarTitle: "推薦文章",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+              'https://github.com/yuanyp8/yuanyp8.github.io/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -63,6 +81,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: 'Yuanyp8 Wiki',
         logo: {
@@ -76,7 +100,8 @@ const config = {
             position: 'left',
             label: 'wiki',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '随笔', position: 'left'},
+          {to: '/docs/faq/', label: '常見問題', position: 'left'},
           {
             href: 'https://github.com/yuanyp8/yuanyp8.github.io',
             label: 'GitHub',

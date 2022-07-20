@@ -1,4 +1,5 @@
 ---
+sidebar_position: 4
 slug: unionFS
 id: unionFS
 title: Union File System

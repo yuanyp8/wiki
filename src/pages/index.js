@@ -1,41 +1,100 @@
-import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
+import React from 'react'
+import clsx from 'clsx'
+import Layout from '@theme/Layout'
+import Link from '@docusaurus/Link'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import styles from './index.module.css'
+import HomepageFeatures from '../components/HomepageFeatures'
+import Head from '@docusaurus/Head'
+import HeroImg from '../../static/img/Hero.jpg'
+const svgList = [
+    {
+        title: 'github',
+        Svg: require('../../static/img/github.svg').default,
+        color: 'black',
+        link: 'https://github.com/yuanyp8/yuanyp8.github.io/',
+    },
+    {
+        title: 'bilibili',
+        Svg: require('../../static/img/bilibili.svg').default,
+        link: 'https://space.bilibili.com/606707448',
+    },
+    {
+        title: 'wechat',
+        Svg: require('../../static/img/wechat.svg').default,
+        color: '#2979ff',
+        link: 'http://qnoss.bytecoder.cn/vxid.jpg',
+    },
+]
+const Svg = ({ Svg, color, title, link }) => {
+    return (
+        <a href={link} target='_blank'>
+            <Svg className={styles.svg} style={{ fill: color }} />
+        </a>
+    )
 }
-
+function HomepageHeader() {
+    const { siteConfig } = useDocusaurusContext()
+    return (
+        <header className={clsx('hero hero--primary', styles.heroBanner)}>
+            <div className='container'>
+                <h1 className='hero__title'>{siteConfig.title}</h1>
+                <p className='hero__subtitle'>{siteConfig.tagline}</p>
+                <div className={styles.buttons}>
+                    <Link className='button button--secondary button--lg' to='/docs/intro'>
+                        🖱Click Here!
+                    </Link>
+                </div>
+            </div>
+        </header>
+    )
+}
+function MyHero() {
+    return (
+        <div className={styles.myHeroContainer}>
+            <div className={styles.leftContainer}>
+                <h1 className={styles.leftContainer_h1}>
+                    Always <br /> For Freedom.
+                </h1>
+                <p className={styles.leftContainer_p}>
+                    一个喜欢较真的小伙子
+                    <br />
+                    每一天都要活的有意义 💨
+                </p>
+                <div className={styles.buttonContainer}>
+                    {/* <button className={styles.button}>
+            <a className={styles.hero_a} href='/'>
+              Click
+            </a>
+          </button>
+          <span className={styles.buttonLeftText}>
+            Get Started. <br /> 开启学习之旅.
+          </span> */}
+                    <div className={styles.svgContainer}>
+                        {svgList.map((item, index) => {
+                            return <Svg {...item} key={item.title} />
+                        })}
+                    </div>
+                </div>
+            </div>
+            <div className={styles.rightContainer}>
+                <img src={HeroImg} alt='HeroImg' />
+            </div>
+        </div>
+    )
+}
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
+    const { siteConfig } = useDocusaurusContext()
+    return (
+        <Layout
+            // title={`${siteConfig.title}`}
+            title='Home'
+            description='Wiki知识库/vscode/javascript/软件/工具'>
+            {/* <HomepageHeader /> */}
+            <main>
+                <MyHero />
+                {/* <HomepageFeatures /> */}
+            </main>
+        </Layout>
+    )
 }

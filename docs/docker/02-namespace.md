@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 slug: namespace
 id: namespace
 title: 深入理解 Linux Namespace
