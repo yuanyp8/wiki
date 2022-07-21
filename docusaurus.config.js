@@ -9,7 +9,7 @@ const katex = require('rehype-katex');
 const pageRef = require('./src/plugins/pageRef');
 
 const pageOptions = {
-  sidebarCollapsible: false,
+  sidebarCollapsible: true,
   // editUrl: 'https://github.com/PatelN123/Digital-Support-Notes/edit/main/Website/',
   showLastUpdateAuthor: true,
   showLastUpdateTime: true,
@@ -62,9 +62,9 @@ const config = {
           breadcrumbs: false,
         },
         blog: {
-          blogTitle: "随笔",
-          blogDescription: "YEE式機器龍各種用肝和 ❤️ 製作的部落格",
-          blogSidebarTitle: "推薦文章",
+          blogTitle: " ❤️随笔",
+          // blogDescription: "YEE式機器龍各種用肝和 ❤️ 製作的部落格",
+          blogSidebarTitle: "博客列表",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -74,13 +74,57 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+        },
       }),
     ],
   ],
 
+
+  // 自定义
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "life",
+        path: "life",
+        routeBasePath: "life",
+        // sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://github.com/yuanyp8/yuanyp8.github.io/tree/master/",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: true,
+       // include: ['**/*.md', '**/*.mdx',],
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "work",
+        path: "work",
+        routeBasePath: "work",
+        // sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://github.com/yuanyp8/yuanyp8.github.io/tree/master/",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: true,
+       // include: ['**/*.md', '**/*.mdx',],
+      },
+    ],
+  ],
+
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {
+          name: "keywords",
+          content: "yuanyp8, wiki, blog, c, c++, docker, python, linux",
+        },
+      ],
       docs: {
         sidebar: {
           hideable: true,
@@ -89,6 +133,7 @@ const config = {
       },
       navbar: {
         title: 'Yuanyp8 Wiki',
+        hideOnScroll: true,
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -98,10 +143,23 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'wiki',
+            label: 'Docs',
+            // items: [
+            //   {
+            //     label: "test1",
+            //     to: "/test1",
+            //   },
+            //   {
+            //     label: "life",
+            //     to: "/life"
+            //   },
+            // ],
           },
-          {to: '/blog', label: '随笔', position: 'left'},
-          {to: '/docs/faq/', label: '常見問題', position: 'left'},
+
+
+          {to: '/work', label: '📗Work', position: 'left'},
+          {to: '/life', label: '🚴Life', position: 'left'},
+          {to: '/blog', label: '❤随笔', position: 'left'},
           {
             href: 'https://github.com/yuanyp8/yuanyp8.github.io',
             label: 'GitHub',
@@ -116,8 +174,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '文档',
+                to: '/docs',
               },
             ],
           },
@@ -142,21 +200,33 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
+                label: '博客',
                 to: '/blog',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/yuanyp8/yuanyp8.github.io',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Yuanyp8's Project, Stay Hungry Stay Foolish.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
+      },
+      announcementBar: {
+        id: 'support_us',
+        content:
+            '🚀 如果你觉得还不错, 就给一个 ⭐️ Start 吧 ~ <a target="_blank" rel="noopener noreferrer" href="https://github.com/yuanyp8/yuanyp8.github.io/tree/master/">Click here</a> ',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: false,
       },
     }),
 };
