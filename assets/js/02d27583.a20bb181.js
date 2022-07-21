@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[2039],{562:u=>{u.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"life"}')}}]);
