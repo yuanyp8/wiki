@@ -39,3 +39,5 @@ jobs:
           # 你可以用自己的用户信息替换它们。
           # user_name: github-actions[bot]
           # user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          user_name: yuanyp8
+          user_email: yuanyp8@gmail.com
