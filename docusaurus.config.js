@@ -22,7 +22,7 @@ const pageOptions = {
 const config = {
   title: 'Hi! 我是元玉鹏',
   tagline: "Yuanyp8's wiki",
-  url: 'https://yuanyp8.com',
+  url: 'https://yuanyp8.github.io',
   baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
