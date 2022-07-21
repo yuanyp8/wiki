@@ -174,8 +174,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: '文档',
-                to: '/docs',
+                label: 'Docker Cookbook',
+                to: '/docs/category/docker-cookbook',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
