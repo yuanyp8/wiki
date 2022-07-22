@@ -115,3 +115,9 @@ rdma
 :::warning
 这几句话现在不理解暂时没关系，后面我们实际使用过程中会逐渐的了解到他们之间的联系的S
 :::
+
+![img](assets/25_625_d4a12c2a48cbc49.png)
+
+在上图中，CPU 和 Memory subsystem子系统被附加到 cpu_mem_cg 的hierarchy中，其中 cg1 和 cg2 是两个 Control Group。但我们需要注意的是，如果 CPU 或 Memory 子系统附加到另一个层次结构中，则 CPU 或 Memory 子系统不能附加到 CPU 或 Memory 子系统。
+
+ 

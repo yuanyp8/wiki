@@ -13,6 +13,7 @@ const pageOptions = {
   // editUrl: 'https://github.com/PatelN123/Digital-Support-Notes/edit/main/Website/',
   showLastUpdateAuthor: true,
   showLastUpdateTime: true,
+
   beforeDefaultRemarkPlugins: [
     pageRef,
   ],
@@ -27,7 +28,7 @@ const config = {
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
-
+  themes: ['@docusaurus/theme-live-codeblock'],
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'yuanyp8', // Usually your GitHub org/user name.
@@ -143,7 +144,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: '🖐Docs',
             // items: [
             //   {
             //     label: "test1",
@@ -178,8 +179,8 @@ const config = {
                 to: '/docs/category/docker-cookbook',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'HTTP 权威指南',
+                to: '/docs/category/http-protocol',
               },
               {
                 label: 'Twitter',
