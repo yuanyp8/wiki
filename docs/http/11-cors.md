@@ -133,7 +133,7 @@ Access-Control-Allow-Origin: *
 Access-Control-Allow-Origin: https://foo.example
 ```
 
-::: caution
+:::caution
 当响应的是**附带身份凭证的请求**时，服务端 **必须** 明确 `Access-Control-Allow-Origin` 的值，而不能使用通配符`*`。
 :::
 
